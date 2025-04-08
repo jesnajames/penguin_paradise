@@ -21,7 +21,6 @@ const Login: React.FC<LoginProps> = ({ onSwitchToSignup }) => {
     try {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) throw error;
-      // The AuthProvider will handle the redirect/UI update on successful login
     } catch (error: any) {
       setError(error.error_description || error.message);
     } finally {
